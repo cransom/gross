@@ -1,5 +1,5 @@
-let pkgs = import <nixpkgs> { };
-in pkgs.mkShell {
+{ pkgs }:
+pkgs.mkShell {
   buildInputs = with pkgs; [
     ruby
     go
@@ -8,8 +8,13 @@ in pkgs.mkShell {
     yarn
     python3Packages.virtualenv
     python3Packages.tkinter
+    python3Packages.invoke
+    python3Packages.pyyaml
+    cmake
     libmemcached
     memcached
     pkg-config
+
+    chromium
   ];
 }
